@@ -39,12 +39,20 @@ export const nextAuthConfig: NextAuthOptions = {
     ],
 
     callbacks: {
-        jwt({ token, user }) {
+        async jwt({ token, user }) {
+            // أول ما المستخدم يسجل دخول، بننقل التوكن من الـ user للـ JWT
             if (user) {
-                token.accessToken = user.tokenFromServer;
+                token.tokenFromServer = user.tokenFromServer;
             }
             return token;
-        }
+        },
+        async session({ session, token }) {
+            // بننقل التوكن من الـ JWT للـ Session عشان تقدر تستخدمه في الـ components
+            if (token) {
+                session.user.token = token.tokenFromServer;
+            }
+            return session;
+        },
     },
 
     session: {
