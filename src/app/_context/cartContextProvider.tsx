@@ -1,23 +1,42 @@
 "use client"
-import React, { createContext, ReactNode, useEffect, useState } from 'react'
-import { getCart } from '../_actions/cart.actions'
+import React, {
+    createContext,
+    ReactNode,
+    useEffect,
+    useState,
+} from "react";
 
+import { getCart } from "../_actions/cart.actions";
 
-export const cartContext = createContext({})
+type CartContextType = {
+    cartNumber: number;
+    setCartNumber: React.Dispatch<React.SetStateAction<number>>;
+};
 
-export default function CartContextProvider({children} : {children : ReactNode}) {
-    const [cartNumber, setCartNumber] = useState(0)
-    async function getUserCart(){
+export const cartContext = createContext<CartContextType>(
+    {} as CartContextType
+);
+
+export default function CartContextProvider({
+    children,
+}: {
+    children: ReactNode;
+}) {
+    const [cartNumber, setCartNumber] = useState(0);
+
+    async function getUserCart() {
         const res = await getCart();
-        setCartNumber((res?.numOfCartItems!))
+
+        setCartNumber(res?.numOfCartItems || 0);
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getUserCart();
-    } , [])
-  return (
-    <cartContext.Provider value={{cartNumber , setCartNumber}}>
-        {children}
-    </cartContext.Provider>
-  )
+    }, []);
+
+    return (
+        <cartContext.Provider value={{ cartNumber, setCartNumber }}>
+            {children}
+        </cartContext.Provider>
+    );
 }
