@@ -1,0 +1,63 @@
+/* src/app/_components/slider/slider.module.css */
+
+.sliderWrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* أزرار التنقل Next & Prev */
+.sliderWrapper :global(.swiper-button-prev),
+.sliderWrapper :global(.swiper-button-next) {
+    background-color: white !important;
+    color: #059669 !important; /* لون زمردي emerald-600 */
+    padding: 1rem !important;
+    border-radius: 9999px !important;
+    width: 3rem !important;
+    height: 3rem !important;
+    display: none !important;
+}
+
+@media (min-width: 1024px) {
+    .sliderWrapper :global(.swiper-button-prev),
+    .sliderWrapper :global(.swiper-button-next) {
+        display: flex !important;
+    }
+}
+
+
+/* الصور المصغرة (Bullets) */
+.sliderWrapper :global(.swiper-pagination-bullet) {
+    background-color: white !important;
+    opacity: 0.55 !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.sliderWrapper :global(.swiper-pagination-bullet:hover) {
+    opacity: 0.85 !important;
+}
+
+/* النقطة/الصورة النشطة */
+.sliderWrapper :global(.swiper-pagination-bullet-active) {
+    opacity: 1 !important;
+    width: 24px;
+    border-radius: 5px !important;
+    transition: all 0.3s;
+}
+
+.sliderWrapper :global(.swiper-pagination-bullet-active:hover) {
+    transform: scale(1.3);
+}
+
+/* .swiper-button-prev,
+  .swiper-button-next{
+    @apply bg-white! text-emerald-600! p-4 rounded-full w-12! h-12! hidden! lg:flex!;
+  }
+
+  .swiper-pagination-bullet{
+    @apply bg-white! opacity-55! transition-all hover:opacity-85!;
+  }
+
+  .swiper-pagination-bullet-active{
+    @apply opacity-100! w-6! rounded-2xl! hover:scale-130!;
+  } */
