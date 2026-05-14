@@ -26,6 +26,7 @@ export const nextAuthConfig: NextAuthOptions = {
 
                 if (result.user) {
                     return {
+                        id: result.user.email,
                         name: result.user.name,
                         email: result.user.email,
                         tokenFromServer: result.token,
