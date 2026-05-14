@@ -35,7 +35,6 @@ export default function page() {
   async function handleRegister(data: any) {
     const result = await registerServer(data);
 
-    console.log(result);
     
     if(result.message === "success") {
       toast.success("Account created successfully!" , {

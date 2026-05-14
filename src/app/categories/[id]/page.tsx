@@ -108,7 +108,7 @@ export default async function page({ params }: subCatPageProps) {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                     {subCategories?.data.map((subCat) => {
-                        return <Link key={subCat._id} href={`product?subCategory=${subCat._id}`} className='group bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-xl hover:border-green-200 transition-all duration-300 hover:-translate-y-1'>
+                        return <Link key={subCat._id} href={`/products?subcategory=${subCat._id}`} className='group bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-xl hover:border-green-200 transition-all duration-300 hover:-translate-y-1'>
                             <div className="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors text-green-600 text-3xl">
                                 <FaFolderOpen />
                             </div>

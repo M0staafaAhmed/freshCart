@@ -36,7 +36,6 @@ export async function addToCart(productId: string): Promise<cartType> {
   });
 
   const finalRes = await res.json();
-  console.log(finalRes);
 
   return finalRes; // يفضل دائماً إرجاع النتيجة لمعرفة حالة العملية
 }
@@ -56,7 +55,6 @@ export async function getCart() : Promise<cartType | null> {
   });
 
   const finalRes = await res.json();
-  console.log(finalRes);
 
   return finalRes;
   }catch(error){
@@ -133,7 +131,6 @@ export async function createCashOrder(cartId : string , shippingAddress : {}) {
   });
 
   const finalRes = await res.json();
-  console.log(finalRes);
 
   return finalRes;
 }
@@ -151,7 +148,6 @@ export async function createVisaOrder(cartId : string , shippingAddress : {}) {
   });
 
   const finalRes = await res.json();
-  console.log(finalRes);
 
   return finalRes;
 }

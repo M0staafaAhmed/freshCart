@@ -81,7 +81,6 @@ export async function getOrders(): Promise<Order[] | null> {
         );
 
         const finalres = await res.json();
-        console.log(finalres);
         return finalres;
     } catch (error) {
         return null;

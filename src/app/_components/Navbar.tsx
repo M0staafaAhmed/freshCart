@@ -309,7 +309,7 @@ export function Navbar() {
                                         <Link href="/categories" onClick={toggleNav} className="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">Categories</Link>
                                     </li>
                                     <li>
-                                        <Link href="/Brands" onClick={toggleNav} className="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">Brands</Link>
+                                        <Link href="/brands" onClick={toggleNav} className="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">Brands</Link>
                                     </li>
                                 </ul>
                                 <ul className="px-5 py-4 border-b border-gray-200 list-none">

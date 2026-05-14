@@ -56,7 +56,6 @@ export default function page() {
 
         if (paymentType === "cash") {
             const res = await createCashOrder(cartItems?.cartId as string, address)
-            console.log(res)
             if (res.status === "success") {
                 toast.success(res.message)
                 setCartNumber(0)
@@ -66,7 +65,6 @@ export default function page() {
             }
         } else {
             const res = await createVisaOrder(cartItems?.cartId as string, address)
-            console.log(res)
             if (res.status === "success") {
                 router.push(res.session.url)
             } else {

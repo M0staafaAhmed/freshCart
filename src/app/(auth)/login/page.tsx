@@ -52,7 +52,6 @@ export default function page() {
       })
       router.push("/")
     }
-    console.log("result:", result)
   }
   return (
     <>

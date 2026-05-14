@@ -33,9 +33,9 @@ export default function WishlistSkeleton() {
 
                             {/* Product Info Column */}
                             <div className="flex items-center gap-4 md:w-[40%]">
-                                <Skeleton className="h-16 w-16 rounded-lg flex-shrink-0" />
+                                <Skeleton className="h-16 w-16 rounded-lg shrink-0" />
                                 <div className="space-y-2 w-full">
-                                    <Skeleton className="h-5 w-full max-w-[250px]" />
+                                    <Skeleton className="h-5 w-full max-w-62.5" />
                                     <Skeleton className="h-4 w-24" />
                                 </div>
                             </div>

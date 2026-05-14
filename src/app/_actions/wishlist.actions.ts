@@ -20,7 +20,6 @@ export async function addToWishlist(
 ): Promise<addToWishlistType> {
     const token = await getMyToken();
 
-    console.log(token);
 
     const res = await fetch(`https://ecommerce.routemisr.com/api/v1/wishlist`, {
         method: "POST", // تأكد من الـ Method المطلوبة في الـ API
@@ -32,7 +31,6 @@ export async function addToWishlist(
     });
 
     const finalRes = await res.json();
-    console.log(finalRes);
 
     return finalRes; // يفضل دائماً إرجاع النتيجة لمعرفة حالة العملية
 }
@@ -51,7 +49,6 @@ export async function getWishlist(): Promise<wishlistType | null> {
     });
 
     const finalRes = await res.json();
-    console.log(finalRes);
 
     return finalRes; 
     }catch(error){
@@ -65,7 +62,6 @@ export async function removeFromWishlist(
 ): Promise<addToWishlistType> {
     const token = await getMyToken();
 
-    console.log(token);
 
     const res = await fetch(`https://ecommerce.routemisr.com/api/v1/wishlist/${productId}`, {
         method: "Delete", // تأكد من الـ Method المطلوبة في الـ API
@@ -78,7 +74,6 @@ export async function removeFromWishlist(
 
     const finalRes = await res.json();
     revalidateTag("wishlist" , "default")
-    console.log(finalRes);
 
     return finalRes; // يفضل دائماً إرجاع النتيجة لمعرفة حالة العملية
 }
