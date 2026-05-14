@@ -76,10 +76,11 @@ export default async function page({ params }: subCatPageProps) {
                         <div className="bg-white/20 size-20 rounded-2xl backdrop-blur-sm border border-white/10 shadow-lg relative">
                             {parentCategory?.data.image && (
                                 <Image
-                                    src={parentCategory.data.image}
-                                    alt={parentCategory.data.name}
-                                    fill
-                                    className='object-contain'
+                                    src={parentCategory?.data?.image ?? "/placeholder.png"} // الـ ?? بتضمن إن النوع يفضل string دايماً
+                                    alt={parentCategory?.data?.name ?? "category"}
+                                    width={500}
+                                    height={500}
+                                    priority
                                 />
                             )}
                         </div>
@@ -108,14 +109,14 @@ export default async function page({ params }: subCatPageProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                     {subCategories?.data.map((subCat) => {
                         return <Link key={subCat._id} href={`product?subCategory=${subCat._id}`} className='group bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-xl hover:border-green-200 transition-all duration-300 hover:-translate-y-1'>
-                                <div className="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors text-green-600 text-3xl">
-                                    <FaFolderOpen />
-                                </div>
-                                <h3 className="font-bold text-gray-900 text-lg group-hover:text-green-600 transition-colors mb-2">{subCat.name}</h3>
-                                <div className="flex items-center gap-2 text-sm text-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <span>Browse Products</span>
-                                    <FaArrowRight />
-                                </div>
+                            <div className="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors text-green-600 text-3xl">
+                                <FaFolderOpen />
+                            </div>
+                            <h3 className="font-bold text-gray-900 text-lg group-hover:text-green-600 transition-colors mb-2">{subCat.name}</h3>
+                            <div className="flex items-center gap-2 text-sm text-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                <span>Browse Products</span>
+                                <FaArrowRight />
+                            </div>
                         </Link>
                     })}
                 </div>
