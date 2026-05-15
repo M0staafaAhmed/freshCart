@@ -13,7 +13,9 @@ export default async function page() {
 
   async function getBrands(): Promise<brandRes | null> {
     try {
-      const res = await fetch("https://ecommerce.routemisr.com/api/v1/brands",);
+      const res = await fetch("https://ecommerce.routemisr.com/api/v1/brands",{
+        cache: "force-cache"
+      });
 
       const finalres = await res.json();
       return finalres;

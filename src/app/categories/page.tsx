@@ -13,7 +13,9 @@ export default async function page() {
 
     async function getcategorys(): Promise<categoryRes | null> {
         try {
-            const res = await fetch("https://ecommerce.routemisr.com/api/v1/categories",);
+            const res = await fetch("https://ecommerce.routemisr.com/api/v1/categories",{
+                cache: "force-cache"
+            });
 
             const finalres = await res.json();
             return finalres;
