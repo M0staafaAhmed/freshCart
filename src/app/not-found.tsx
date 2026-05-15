@@ -1,13 +1,10 @@
-"use client";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { FiArrowLeft, FiHome } from "react-icons/fi"; // icons شيك
-import { useRouter } from "next/navigation";
 import { FaAppleWhole, FaCartShopping, FaSeedling } from "react-icons/fa6";
+import GoBackBtn from "./_components/goBackBtn";
 
 export default function NotFound() {
-    const router = useRouter();
 
     const popularDestinations = [
         { name: "All Products", href: "/products", active: true },
@@ -70,13 +67,7 @@ export default function NotFound() {
                         <FiHome className="text-lg" />
                         Go to Homepage
                     </Link>
-                    <button
-                        onClick={() => router.back()}
-                        className="cursor-pointer flex items-center gap-2.5 bg-white text-gray-800 px-8 py-3.5 rounded-full font-bold text-base border border-gray-100 shadow-sm hover:border-gray-200 hover:shadow-md transition-all duration-300 group"
-                    >
-                        <FiArrowLeft className="text-lg group-hover:-translate-x-1 transition-transform" />
-                        Go Back
-                    </button>
+                    <GoBackBtn/>
                 </div>
                 <div className="w-full max-w-4xl bg-white/60 p-5 rounded-[40px] border border-gray-100/70 shadow-sm backdrop-blur-sm">
                     <div className="text-center mb-6">

@@ -19,6 +19,7 @@ import { Metadata } from 'next';
 import ProductCount from '@/app/_components/productComponents/productCount';
 import ProductInfo from '@/app/_components/productComponents/productInfo';
 import RelatedProducts from '@/app/_components/productComponents/relatedProducts';
+import { redirect } from 'next/navigation';
 
 
 interface productPageProps{
@@ -41,6 +42,11 @@ export default async function page({ params }: productPageProps) {
   const { id } = await params;
 
   const product = await getProductById(id);
+
+  if (!product){
+    redirect("/404")
+    return <></>;
+  }
 
 
   return (
@@ -82,7 +88,7 @@ export default async function page({ params }: productPageProps) {
             <div className="md:w-3/4">
               <div className="bg-white rounded-xl shadow-sm p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Link className="bg-green-50 text-green-700 text-xs px-3 py-1.5 rounded-full hover:bg-green-100 transition" href={`categories/${product?.category._id}`}>{product?.category.name}</Link>
+                  <Link className="bg-green-50 text-green-700 text-xs px-3 py-1.5 rounded-full hover:bg-green-100 transition" href={`/categories/${product?.category._id}`}>{product?.category.name}</Link>
                   <span className="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">{product?.brand.name}</span>
                 </div>
                 <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">{product?.title}</h1>
