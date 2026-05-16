@@ -130,7 +130,7 @@ export function Navbar() {
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild className="hover:bg-transparent hover:text-emerald-600">
-                                        <Link href="/shop">Shop</Link>
+                                        <Link href="/products">Shop</Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenu>
@@ -303,7 +303,7 @@ export function Navbar() {
                                         <Link href="/" onClick={toggleNav} className="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">Home</Link>
                                     </li>
                                     <li>
-                                        <Link href="/shop" onClick={toggleNav} className="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">Shop</Link>
+                                        <Link href="/products" onClick={toggleNav} className="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">Shop</Link>
                                     </li>
                                     <li>
                                         <Link href="/categories" onClick={toggleNav} className="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-colors">Categories</Link>
