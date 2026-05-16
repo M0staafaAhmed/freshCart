@@ -78,16 +78,18 @@ export default async function page({ params }: subCatPageProps) {
                     {/* Content Section */}
                     <div className="flex items-center gap-5">
                         {/* Icon Box */}
-                        <div className="bg-white/20 size-20 rounded-2xl backdrop-blur-sm border border-white/10 shadow-lg relative overflow-hidden">
-                            {parentCategory?.data.image && (
+                        <div className="bg-white/20 size-20 rounded-2xl backdrop-blur-sm border border-white/10 shadow-lg p-2 overflow-hidden">
+                            <div className="relative w-full h-full">
+                                {parentCategory?.data.image && (
                                 <Image
                                     src={parentCategory?.data?.image ?? "/placeholder.png"} // الـ ?? بتضمن إن النوع يفضل string دايماً
                                     alt={parentCategory?.data?.name ?? "category"}
                                     fill
-                                    className='object-cover'
+                                    className='object-contain'
                                     priority
                                 />
                             )}
+                                </div>   
                         </div>
 
                         {/* Text Section */}

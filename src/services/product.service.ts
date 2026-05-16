@@ -8,7 +8,7 @@ interface ProductParams {
     keyword?: string;
     page?: number;
     limit?: number;
-    subcategory: string;
+    subcategory?: string;
 }
 
 

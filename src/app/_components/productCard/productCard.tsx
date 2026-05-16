@@ -18,8 +18,10 @@ export default function ProductCard({product} : productCardPropsType) {
 
     return (
         <div className="w-full rounded-xl border border-gray-200 relative overflow-hidden bg-white transition-all hover:shadow-lg hover:-translate-y-2">
-            <div className="w-full h-56 relative">
-                <Image src={product.imageCover} alt={product.title} fill className="object-cover" />
+            <div className="w-full h-56">
+                <div className="relative w-full h-full">
+                    <Image src={product.imageCover} alt={product.title} fill className="object-contain" />
+                </div>
             </div>
 
             {product.priceAfterDiscount && <span className="absolute top-0 left-0 bg-red-500 text-white text-xs font-medium px-2 py-1 m-3 rounded-sm">-{Math.floor(((product.price - product.priceAfterDiscount) / product.price) * 100)}%</span>}

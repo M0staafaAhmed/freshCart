@@ -9,14 +9,12 @@ import {
 import { getProducts } from '@/services/product.service'
 import ProductCard from '../productCard/productCard';
 
-export default async function RelatedProducts({categoryName} : {categoryName : string | undefined}) {
+export default async function RelatedProducts({categoryId} : {categoryId : string | undefined}) {
 
 
-    const products = await getProducts();
-
-    const relatedProducts = products?.filter((product) =>{
-        return product.category.name === categoryName
-    })
+    const products = await getProducts({
+        category: categoryId
+    });
 
 
     return (
@@ -32,7 +30,7 @@ export default async function RelatedProducts({categoryName} : {categoryName : s
                     </div>
                 </div>
                 <CarouselContent>
-                    {relatedProducts?.map((product) => (
+                    {products?.map((product) => (
                         <CarouselItem key={product.id} className='sm:basis-1/2 md:basis-1/3 lg:basis-1/5'>
                             <ProductCard product={product} />
                         </CarouselItem>

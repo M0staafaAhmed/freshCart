@@ -160,7 +160,7 @@ export default async function page({ params }: productPageProps) {
           </div>
         </section>
         <ProductInfo product={product}/>
-        <RelatedProducts categoryName={product?.category?.name} />
+        <RelatedProducts categoryId={product?.category?._id} />
       </div>
     </>
   )
