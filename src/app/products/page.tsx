@@ -48,7 +48,7 @@ export default async function Page({ searchParams }: PageProps) {
 
   const parent: { data: brandType | subCategoryType | categoryType } | null = await getParent()
 
-  if ((parent?.message) === "fail") {
+  if (((parent as any)?.message) === "fail") {
     redirect("/404")
   }
 
