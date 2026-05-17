@@ -7,7 +7,7 @@ export default async function middleware(req: NextRequest) {
     const { pathname } = req.nextUrl
 
     // لو مش logged in وعايز يدخل protected page
-    if (!jwt && (pathname.startsWith('/profile') || pathname.startsWith('/cart') || pathname.startsWith('/wishlist') || pathname.startsWith('/orders'))) {
+    if (!jwt && (pathname.startsWith('/profile') || pathname.startsWith('/cart') || pathname.startsWith('/wishlist') || pathname.startsWith('/allorders') )) {
         return NextResponse.redirect(new URL('/login', req.url))
     }
 
