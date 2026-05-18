@@ -1,7 +1,7 @@
 "use server";
 import { productType } from "@/types/product.type";
 import { getMyToken } from "@/utils/getMyToken";
-import { revalidateTag } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 
 export interface cartType {
   status: string;
@@ -76,7 +76,7 @@ export async function updateCartProduct(count : Number, productId : string) : Pr
 
   const finalRes = await res.json();
 
-  revalidateTag('getCart' , "default")
+  revalidatePath("/cart")
 
   return finalRes;
 }
@@ -94,7 +94,7 @@ export async function deleteProductFromCart(productId : string) : Promise<cartTy
 
   const finalRes = await res.json();
 
-  revalidateTag('getCart' , "default")
+  revalidatePath("/cart")
 
   return finalRes;
 }
@@ -112,7 +112,7 @@ export async function clearCart() : Promise<cartType>{
 
   const finalRes = await res.json();
 
-  revalidateTag('getCart' , "default")
+  revalidatePath("/cart")
 
   return finalRes;
 }

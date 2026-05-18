@@ -1,7 +1,7 @@
 "use server";
 import { productType } from "@/types/product.type";
 import { getMyToken } from "@/utils/getMyToken";
-import { revalidateTag } from "next/cache";
+import { revalidatePath } from "next/cache";
 
 interface addToWishlistType {
     status: string;
@@ -73,7 +73,7 @@ export async function removeFromWishlist(
     });
 
     const finalRes = await res.json();
-    revalidateTag("wishlist" , "default")
+    revalidatePath("/wishlist")
 
     return finalRes; // يفضل دائماً إرجاع النتيجة لمعرفة حالة العملية
 }
