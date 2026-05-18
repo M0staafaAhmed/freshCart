@@ -31,7 +31,7 @@ export default function AddToWishlistbtn({ productId }: { productId: string }) {
             disabled={isPending}
             variant="outline"
             size="icon"
-            className={`w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md transition-all hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-100 text-gray-900`}
+            className={`w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-md transition-all hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-100 text-gray-900`}
             title='Add to wishlist'
         >
             {isPending ? (
