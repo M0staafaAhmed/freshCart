@@ -19,7 +19,7 @@ const EmptyWishlist = () => {
       </p>
 
       {/* الزر الأخضر */}
-      <Link href={"/product"}
+      <Link href={"/products"}
         className="flex items-center gap-2 bg-[#1a8a47] hover:bg-[#156e39] text-white px-10 py-3 rounded-lg font-medium transition-all duration-200"
       >
         Browse Products

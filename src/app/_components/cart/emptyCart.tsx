@@ -14,7 +14,7 @@ export default function EmptyCart() {
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 my-3">Your cart is empty</h2>
                 <p className="text-gray-500 mb-8 leading-relaxed">Looks like you haven't added anything to your cart yet. <br /> Start exploring our products!</p>
-                <Link href={"/"} className='inline-flex items-center gap-2 bg-linear-to-r from-green-600 to-green-700 text-white py-3.5 px-8 rounded-xl font-semibold hover:from-green-700 hover:to-green-800 transition-all shadow-lg shadow-green-600/20 active:scale-[0.98]'>Start shopping <MdArrowRightAlt /></Link>
+                <Link href={"/products"} className='inline-flex items-center gap-2 bg-linear-to-r from-green-600 to-green-700 text-white py-3.5 px-8 rounded-xl font-semibold hover:from-green-700 hover:to-green-800 transition-all shadow-lg shadow-green-600/20 active:scale-[0.98]'>Start shopping <MdArrowRightAlt /></Link>
             </div>
         </div>
     </div>
