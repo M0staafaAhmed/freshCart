@@ -62,7 +62,7 @@ export default async function page() {
             </div>
 
             <div className="container mx-auto py-8">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5">
                     {categorys?.data.map((category) => {
                         return <Link key={category._id} href={`categories/${category._id}`}>
                             <div className="group bg-white rounded-2xl border border-gray-100 p-4 sm:p-5 shadow-sm hover:shadow-xl hover:border-green-200 transition-all duration-300 hover:-translate-y-1">
