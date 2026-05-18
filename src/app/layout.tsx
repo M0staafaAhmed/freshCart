@@ -38,8 +38,12 @@ export default function RootLayout({
               <Toaster
                 toastOptions={{
                   classNames: {
-                    success: 'bg-green-600! text-white!',
-                    error: 'bg-red-600! text-white!',
+                    toast: '!rounded-xl !px-4 !py-3.5 !flex !items-center !gap-3 !shadow-lg',
+                    success: '!bg-green-600 !text-white !shadow-green-600/25',
+                    error: '!bg-red-600 !text-white !shadow-red-600/25',
+                    title: '!text-sm !font-medium',
+                    description: '!text-xs !opacity-75',
+                    closeButton: '!text-white/70 hover:!text-white',
                   },
                 }}
               />
