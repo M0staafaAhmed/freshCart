@@ -13,13 +13,12 @@ import Link from 'next/link'
 import { MdPersonAddAlt1 } from 'react-icons/md'
 import { signIn } from 'next-auth/react'
 import { toast } from 'sonner'
-import { useRouter } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 import { IoMdMail } from 'react-icons/io'
 import { IoLockClosedSharp } from 'react-icons/io5'
 
 export default function page() {
 
-  const router = useRouter()
   const [showPassword, setShowPassword] = useState(false)
 
   function togglePassword(){
@@ -50,7 +49,9 @@ export default function page() {
       toast.success("Logged in successfully", {
         position: "top-right",
       })
-      router.push("/")
+      setTimeout(() => {
+        redirect("/")
+      }, 1500);
     }
   }
   return (

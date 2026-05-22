@@ -26,7 +26,7 @@ export const nextAuthConfig: NextAuthOptions = {
 
                 if (result.user) {
                     return {
-                        id: result.user.email,
+                        id: result.user.role,
                         name: result.user.name,
                         email: result.user.email,
                         tokenFromServer: result.token,
@@ -56,7 +56,7 @@ export const nextAuthConfig: NextAuthOptions = {
     },
 
     session: {
-        maxAge: 60 * 60 * 24 * 7, // 1 hour
+        maxAge: 60 * 60 * 24 * 7, // 7 أيام
     },
 
     pages: {
